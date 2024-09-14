@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: #000;
+    background-color: #e3e3e3; /*cor da pag*/
     max-width: 1200px;
     margin: 0 auto;
 
@@ -19,7 +19,7 @@ body {
 /* HEADER */
 
 header {
-    background-color: #000;
+    background-color: #e3e3e3; /*cor do header*/
     padding: 10px;
     display: flex;
     align-items: center;
@@ -27,12 +27,12 @@ header {
 }
 
 header h1 {
-    color: #3c08ca;
+    color: #c96522; /*A*/
     font-size: 2.5rem;
 }
 
 header span {
-    color: #fff;
+    color: #03235e; /*maral*/
 }
 
 
@@ -43,10 +43,10 @@ header .navegacao-primaria {
 }
 
 header .navegacao-primaria li a {
-    color: #fff;
+    color: #000000; /*seções*/
     width: 0px;
     height: 0px;
-    font-size: 1.3rem;
+    font-size: 1.3rem; /*Tamanho da seção*/
 }
 
 header .navegacao-primaria li a::after {
@@ -62,20 +62,20 @@ header .navegacao-primaria li a:hover::after {
     width: 100%;
     height: 0px;
     padding: 0px;
-    border-bottom: 4px solid #2909df;
+    border-bottom: 4px solid #c96522;
 }
 
 /* DOWLOAD CV SECAO */
 
 .section-div {
     animation: inicializar .7s forwards;
-    background-color: #000;
+    background-color: #e3e3e3; /*FUNDO*/
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: space-around;
     align-items: center;
     gap: 60px;
-    padding: 60px;
+    padding: 50px;
 }
 
 .section-div div {
@@ -85,29 +85,36 @@ header .navegacao-primaria li a:hover::after {
     gap: 30px;
 }
 
+.section-div div h1 { /*Anderson Amaral*/
+    color: #03235e;
+    font-family: 'Poppins';
+    font-weight: 600;
+}
+
 .section-div div h2 {
     font-family: 'Poppins';
     font-weight: 600;
-    color: #ffffff;
+    color: #c96522; /*Developer back end*/
 }
 
 .section-div div p {
     font-family: 'Poppins';
     font-weight: 200;
-    color: #f7f7f7;
+    color: #000000;
 }
 
 .section-div div a {
     justify-self: start;
-    color: #fff;
+    color: #000; /*Cor dowload CV*/
     padding: 15px 40px;
-    border-radius: 5px;
-    border: 2px solid white;
+    border-radius: 100px;
+    border: 3px solid rgb(0, 0, 0);
 }
 
 .section-div img {
     max-width: 100%;
 }
+
 
 .digitando::after{
     content: '|';
@@ -141,8 +148,8 @@ header .navegacao-primaria li a:hover::after {
 /* SEÇÃO PRINCIPAL SOBRE MIM */
 
 main {
-    background-color: #111;
-    color: white;
+    background-color: #e3e3e3; /*cor de fundo da pag*/
+    color: rgb(0, 0, 0);
 }
 
 main .sobre {
@@ -158,12 +165,12 @@ main .sobre {
     margin: 30px 0;
     grid-column: 1/-1;
     text-align: center;
-    color: #fff;
+    color: #000000;
 }
 
-.sobre_titulo {
+.sobre_titulo h1 {
     font-size: 2.5rem;
-    color: #0127fd;
+    color: #c96522;
     margin-bottom: 15px;
     font-family: 'Berkshire Swash', cursive; 
 }
@@ -185,8 +192,8 @@ main .sobre {
     display: block;
     height: 20px;
     width: 20px;
-    border-radius: 50px;
-    background-color: #080cf5;
+    border-radius: 50%;
+    background-color: #03235e;
 }
 
 .sobre img {
@@ -207,7 +214,7 @@ main .sobre {
     animation: sobeSecao.6s ease-in-out forwards;
     grid-column: 2/-1;
     display: grid;
-    color: #707070;
+    color: #000000;
     grid-template-columns: 1fr 1fr;
 }
 
@@ -219,12 +226,12 @@ main .sobre {
 
 .sobre_texto h1{
     font-size: 2.3rem;
-    color: #fff;
+    color: #000000;
     grid-column: 1/-1;
 }
 
 .sobre_texto h1::after {
-    background-color: #0127fd;
+    background-color: #03235e;
     height: 6px;
     width: 60px;
     margin: 20px 0;
@@ -249,14 +256,14 @@ main .sobre {
 }
 
 .sobre_info i {
-    color: #0127fd;
+    color: #03235e;
     display: inline-block;
     padding-right: 15px;
     font-size: 1.5rem;
 }
 
 .sobre_info p {
-    font-size: .9rem;
+    font-size: 0.9rem;
 }
 
 @keyframes sobeSecao{
@@ -287,17 +294,38 @@ main .sobre {
     }
 
     .section-div {
-            background-image: url(img/andersonPortfolio.png);
+            background-image: url(img-BrancoPortfolio2.png);/*Foto home celular*/
             background-repeat: no-repeat;
             background-size: cover;
-        }
+    }
+
+    header {
+        justify-content: space-between;
+        padding: 30px 70px;
+    }
+    
     header .navegacao-primaria {
         display: none;
 
     }
     header i {
-        color: #0127fd;
-        font-size: 3rem;
+        color: #090909; /*cor mobile*/
+        font-size: 2rem;
+    }
+
+    header .navegacao-primaria.ativado {
+        background: linear-gradient(rgba(43,42,42, 0.176), rgba(46,46,46, 0.724));
+        position: absolute;
+        display: grid;
+        top: 80px;
+        color: #ececec;
+        z-index: 1;
+        padding: 30px;
+        font-size: 1.6rem;
+        font-weight: bold;
+        border-radius: 0 0 4px 4px;
+        right: 20px;
+        animation: sobeSecao .8s ease-in-out forwards;
     }
 
 }
@@ -309,7 +337,6 @@ main .sobre {
     }
 
     .sobre_conteudo {
-
         grid-column: 1/-1;
     }
 }
@@ -319,12 +346,12 @@ main .sobre {
 .services {
     margin-top: -30px;
     padding: 60px;
-    background-color: #151515;
+    background-color: #e3e3e3;/*cor de fundo da pag*/
 }
 
 .my_services {
     padding: 60px;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .my_services ul {
@@ -346,16 +373,16 @@ main .sobre {
     max-width: 300px;
     align-content: center;
     height: 300px;
-    background-color: #222;
+    background-color: #d9d5d5;/*cor do fundo dos quadrados*/
 }
 
 .my_services ul li i {
     font-size: 2.7rem;
-    color: #dc3545;
+    color: #03235e;
 }
 
 .my_services ul li h3 {
-    color: #fff;
+    color: #000000;
     font-size: 1.6rem;
     font-family: 'poppins';
     font-weight: 500;
@@ -395,13 +422,161 @@ main .sobre {
 .my_services li:hover::before {
     width: 100%;
     height: 100%;
-    border-top: 2px solid red;
-    border-right: 2px solid red;
+    border-top: 2px solid #c96522;
+    border-right: 2px solid #c96522;
 }
 
 .my_services li:hover::after {
     width: 100%;
     height: 100%;
-    border-bottom: 2px solid red;
-    border-left: 2px solid red;
+    border-bottom: 2px solid #c96522;
+    border-left: 2px solid #c96522;
+}
+
+/*EXPERIENCES*/
+
+.my_resume {
+    color: #000000;
+}
+
+.resume_gerenica {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    gap: 10px;
+    align-items: start;
+}
+
+.resume_gerenica h2 {
+    font-family: 'Poppins';
+    font-size: 1.5rem;
+    background-color: #c96522; /*1º quadrado*/
+    justify-self: start;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.resume_gerenica h2 i {
+    margin-right: 10px;
+}
+
+.experience {
+    margin-bottom: 30px;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.education {
+    margin-bottom: 30px;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.experience_content ul {
+    color: #707070; /*botoes de baixo*/
+    gap: 10px;
+    display: flex;
+    cursor: pointer;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+
+.resume_gerenica .experience_content div {
+    background-color: #c5c5c5; /*cor das caixinhas*/
+    animation: ladoSecao .7s ease-in-out forwards;
+    display: none;
+    padding: 40px;
+    position: relative;
+}
+
+.resume_gerenica .experience_content div.ativo {
+    display: block;
+}
+
+
+.resume_gerenica .experience_content div::before {
+    content: '';
+    border-right: 30px solid transparent;
+    border-bottom: 30px solid #c5c5c5;
+    position: absolute;
+    top: -20px;
+    left: 30px;
+    display: inline-block;
+}
+
+.resume_gerenica .experience_content div span {
+    color: #03235e;/*data*/
+    font-family: "Poppins";
+    font-weight: bold;
+}
+
+.resume_gerenica .experience_content div h3 {
+    font-family: 'Poppins';
+    margin: 10px 0;
+}
+
+.resume_gerenica .experience_content div p {
+    color: #000000;
+    font-size: 1.1rem;
+}
+
+.experience_content ul li.ativo {
+    color: #c96522;
+}
+
+
+/*MEUS DIPLOMAS E CURSOS*/
+
+
+.resume_gerenica .education_content div {
+    background-color: #c5c5c5;
+    display: none;
+    animation: ladoSecao .7s ease-in-out forwards;
+    padding: 40px;
+    position: relative;
+}
+
+.education_content ul {
+    color: #707070; /*botoes de baixo*/
+    gap: 10px;
+    display: flex;
+    cursor: pointer;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.resume_gerenica .education_content div::before {
+    content: '';
+    border-right: 30px solid transparent;
+    border-bottom: 30px solid #c5c5c5;
+    position: absolute;
+    top: -20px;
+    left: 30px;
+    display: inline-block;
+}
+
+.resume_gerenica .education_content div span {
+    color: #03235e;
+    font-family: "Poppins";
+    font-weight: bold;
+}
+
+.resume_gerenica .education_content div h3 {
+    font-family: 'Poppins';
+    margin: 10px 0;
+}
+
+.resume_gerenica .education_content div p {
+    color: #000000;
+    font-size: 1.1rem;
+}
+
+.education_content ul li.ativo {
+    color: #c96522;
+}
+
+.resume_gerenica .education_content div.ativo {
+    display: block;
 }
