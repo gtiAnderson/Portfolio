@@ -10,25 +10,35 @@
 }
 
 body {
-    background-color: #e3e3e3; /*cor da pag*/
-    max-width: 1200px;
-    margin: 0 auto;
-
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/img-BrancoPortfolio2.png'); /* Caminho da sua imagem */
+    background-repeat: no-repeat; /* Não repetir a imagem */
+    background-size: cover; /* Faz a imagem cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-attachment: fixed; /* Faz a imagem ficar fixa enquanto rola a página */
 }
 
 /* HEADER */
 
 header {
-    background-color: #e3e3e3; /*cor do header*/
-    padding: 10px;
+    padding: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between; /* Ajusta para o Amaral e a navegação ficarem na mesma linha */
+    position: fixed; /* Fixa o header (Amaral + Navegação) no topo da página */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(238, 238, 238, 0.8); /* Fundo transparente com leve opacidade */
+    z-index: 1000; /* Garante que o header fique por cima de outros elementos */
+    box-shadow: 0 4px 6px rgba(250, 250, 250, 0.1); /* Adiciona sombra para dar destaque */
 }
 
 header h1 {
     color: #c96522; /*A*/
-    font-size: 2.5rem;
+    font-size: 2.4rem;
 }
 
 header span {
@@ -38,7 +48,7 @@ header span {
 
 header .navegacao-primaria {
     display: flex;
-    gap: 30px;
+    gap: 50px;
     align-items: center;
 }
 
@@ -69,7 +79,6 @@ header .navegacao-primaria li a:hover::after {
 
 .section-div {
     animation: inicializar .7s forwards;
-    background-color: #e3e3e3; /*FUNDO*/
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: space-around;
@@ -82,7 +91,7 @@ header .navegacao-primaria li a:hover::after {
     margin-top: 120px;
     align-self: start;
     display: grid;
-    gap: 30px;
+    gap: 15px;
 }
 
 .section-div div h1 { /*Anderson Amaral*/
@@ -99,7 +108,7 @@ header .navegacao-primaria li a:hover::after {
 
 .section-div div p {
     font-family: 'Poppins';
-    font-weight: 200;
+    font-weight: 600;
     color: #000000;
 }
 
@@ -148,7 +157,6 @@ header .navegacao-primaria li a:hover::after {
 /* SEÇÃO PRINCIPAL SOBRE MIM */
 
 main {
-    background-color: #e3e3e3; /*cor de fundo da pag*/
     color: rgb(0, 0, 0);
 }
 
@@ -224,7 +232,7 @@ main .sobre {
     grid-template-columns: 1fr 1fr;
 }
 
-.sobre_texto h1{
+.sobre_texto h2{
     font-size: 2.3rem;
     color: #000000;
     grid-column: 1/-1;
@@ -288,49 +296,53 @@ main .sobre {
 
 /*RESPONSIVO*/
 
-@media(max-width: 992px){
+/* Responsividade para telas menores que 992px (mobile) */
+@media(max-width: 992px) {
     .section-div img {
-        display: none;
+        display: none; /* Ocultar a imagem na seção em telas pequenas */
     }
 
     .section-div {
-            background-image: url(img-BrancoPortfolio2.png);/*Foto home celular*/
-            background-repeat: no-repeat;
-            background-size: cover;
+        background-image: url('../img/img-BrancoPortfolio2.png'); /* Foto home celular */
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     header {
         justify-content: space-between;
         padding: 30px 70px;
     }
-    
+
+    /* Ocultar o menu de navegação em telas pequenas por padrão */
     header .navegacao-primaria {
-        display: none;
-
-    }
-    header i {
-        color: #090909; /*cor mobile*/
-        font-size: 2rem;
+        display: none; /* Não exibe o menu */
     }
 
+    /* Exibir o ícone de menu (fa-bars) em telas menores */
+    header i.fa-bars {
+        display: block; /* Exibe o ícone */
+        color: #090909; /* Cor do ícone */
+        font-size: 2rem; /* Tamanho do ícone */
+        cursor: pointer; /* Indica que é clicável */
+    }
+
+    /* Menu de navegação no mobile (quando ativado) */
     header .navegacao-primaria.ativado {
         background: linear-gradient(rgba(43,42,42, 0.176), rgba(46,46,46, 0.724));
         position: absolute;
-        display: grid;
-        top: 80px;
-        color: #ececec;
-        z-index: 1;
+        display: grid; /* Exibe os itens em grid */
+        top: 80px; /* Posição abaixo do header */
+        color: #ececec; /* Cor do texto */
+        z-index: 10; /* Garante que fique acima de outros elementos */
         padding: 30px;
         font-size: 1.6rem;
         font-weight: bold;
-        border-radius: 0 0 4px 4px;
-        right: 20px;
-        animation: sobeSecao .8s ease-in-out forwards;
+        border-radius: 0 0 4px 4px; /* Bordas arredondadas */
+        right: 20px; /* Alinhado à direita */
+        animation: sobeSecao 0.8s ease-in-out forwards; /* Animação suave */
     }
 
-}
-
-@media(max-width: 992px){
+    /* Ajustes de layout para as imagens na seção "sobre" */
     .sobre img {
         grid-column: 1/-1;
         justify-self: center;
@@ -341,12 +353,24 @@ main .sobre {
     }
 }
 
+/* Layout desktop (telas maiores que 992px) */
+@media(min-width: 993px) {
+    header .navegacao-primaria {
+        display: flex; /* Exibe o menu de navegação no layout desktop */
+    }
+
+    /* Ocultar ícone de menu em telas grandes */
+    header i.fa-bars {
+        display: none;
+    }
+}
+
+
 /*SEÇÃO SERVICES*/
 
 .services {
     margin-top: -30px;
     padding: 60px;
-    background-color: #e3e3e3;/*cor de fundo da pag*/
 }
 
 .my_services {
@@ -366,14 +390,14 @@ main .sobre {
     cursor: pointer;
     border-radius: 6px;
     position: relative;
-    padding: 10px;
+    padding: 5px;
     display: grid;
-    gap: 30px;
+    gap: 5px;
     text-align: center;
     max-width: 300px;
     align-content: center;
     height: 300px;
-    background-color: #d9d5d5;/*cor do fundo dos quadrados*/
+    background-color: #ececec;/*cor do fundo dos quadrados*/
 }
 
 .my_services ul li i {
@@ -382,8 +406,8 @@ main .sobre {
 }
 
 .my_services ul li h3 {
-    color: #000000;
-    font-size: 1.6rem;
+    color: #1b1b1b;
+    font-size: 1.5rem;
     font-family: 'poppins';
     font-weight: 500;
 }
@@ -436,7 +460,7 @@ main .sobre {
 /*EXPERIENCES*/
 
 .my_resume {
-    color: #000000;
+    color: #03235e;
 }
 
 .resume_gerenica {
@@ -450,11 +474,11 @@ main .sobre {
 
 .resume_gerenica h2 {
     font-family: 'Poppins';
-    font-size: 1.5rem;
-    background-color: #c96522; /*1º quadrado*/
+    font-size: 1.3rem;
+    background-color: #ececec; /*1º quadrado*/
     justify-self: start;
     padding: 10px;
-    border-radius: 3px;
+    border-radius: 20px;
 }
 
 .resume_gerenica h2 i {
@@ -484,7 +508,7 @@ main .sobre {
 
 
 .resume_gerenica .experience_content div {
-    background-color: #c5c5c5; /*cor das caixinhas*/
+    background-color: #ececec; /*cor das caixinhas*/
     animation: ladoSecao .7s ease-in-out forwards;
     display: none;
     padding: 40px;
@@ -499,7 +523,7 @@ main .sobre {
 .resume_gerenica .experience_content div::before {
     content: '';
     border-right: 30px solid transparent;
-    border-bottom: 30px solid #c5c5c5;
+    border-bottom: 30px solid #ececec;
     position: absolute;
     top: -20px;
     left: 30px;
@@ -531,7 +555,7 @@ main .sobre {
 
 
 .resume_gerenica .education_content div {
-    background-color: #c5c5c5;
+    background-color: #ececec;
     display: none;
     animation: ladoSecao .7s ease-in-out forwards;
     padding: 40px;
@@ -550,7 +574,7 @@ main .sobre {
 .resume_gerenica .education_content div::before {
     content: '';
     border-right: 30px solid transparent;
-    border-bottom: 30px solid #c5c5c5;
+    border-bottom: 30px solid #ececec;
     position: absolute;
     top: -20px;
     left: 30px;
@@ -579,4 +603,54 @@ main .sobre {
 
 .resume_gerenica .education_content div.ativo {
     display: block;
+}
+
+/*HABILIDADES*/
+
+#skills {
+    text-align: center;
+    padding: 50px 0;
+}
+
+#skills h2 {
+    font-size: 2.5rem;
+    color: #c96522;
+}
+
+#skills h2 span {
+    color: #03235e;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.skill-card {
+    background: #ececec;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(248, 248, 248, 0.938);
+}
+
+.skill-card img {
+    width: 60px;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #002147;
 }

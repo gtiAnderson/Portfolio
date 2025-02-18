@@ -15,17 +15,25 @@ function escrevendoLetra() {
 
 escrevendoLetra();
 
-function menuMobol() {
-  const ativaMenu = document.querySelector(".fa-bars");
-  const navMenu = document.querySelector("header .navegacao-primaria");
+function menuMobile() {
+  const ativaMenu = document.querySelector(".fa-bars"); // Ícone do menu
+  const navMenu = document.querySelector(".navegacao-primaria"); // Menu de navegação
 
-  ativaMenu.addEventListener("click", () => {
-    ativaMenu.classList.toggle("fa-x");
-    navMenu.classList.toggle("ativado");
-  });
+  if (ativaMenu && navMenu) {
+      // Adiciona o evento de clique no ícone do menu
+      ativaMenu.addEventListener("click", () => {
+          // Verifica se a largura da tela é menor que 992px (mobile)
+          if (window.innerWidth <= 992) {
+              ativaMenu.classList.toggle("fa-x"); // Alterna ícone (fa-bars -> fa-x)
+              navMenu.classList.toggle("ativado"); // Mostra/oculta o menu
+          }
+      });
+  } else {
+      console.error("Elementos do menu mobile não encontrados.");
+  }
 }
 
-menuMobol();
+menuMobile();
 
 function sobreMim() {
 
@@ -76,3 +84,16 @@ function sobreMim() {
 }
 
 sobreMim();
+
+// Navegação suave ao clicar nos links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const target = document.querySelector(this.getAttribute('href'));
+      target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+      });
+  });
+});
