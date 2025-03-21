@@ -461,6 +461,7 @@ main .sobre {
 
 .my_resume {
     color: #03235e;
+    font-family: 'Poppins', sans-serif;
 }
 
 .resume_gerenica {
@@ -604,6 +605,111 @@ main .sobre {
 .resume_gerenica .education_content div.ativo {
     display: block;
 }
+
+/*PROJECTS*/
+#projects {
+    text-align: center;
+    padding: 50px;
+}
+
+.projects-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: #03235e;
+}
+
+.highlight {
+    color: #c96522;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.project-card {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    border-radius: 9px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #c96522;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    transition: bottom 0.5s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+}
+
+.project-card:hover .overlay {
+    bottom: 0;
+}
+
+.overlay .project-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #03235e;
+}
+
+.overlay .project-description {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    color: #000;
+}
+
+.project-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #03235e; 
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 24px;
+    position: absolute;
+    bottom: 10px;
+    left: 90%;
+    transform: translateX(-50%);
+    transition: background-color 0.3s ease;
+}
+
+.project-icon:hover {
+    background-color: #03235e;
+}
+
+.project-icon i {
+    color: #c96522
+}
+
 
 /*HABILIDADES*/
 
