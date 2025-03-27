@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Anderson Amaral</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/iconPortfolio.ico">
+    <link rel="icon" type="image/x-icon" href="assets/img/iconPortfolio.png">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -20,21 +21,39 @@
             <ul aria-label="Navegação primária" class="navegacao-primaria">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About me</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
             </ul>
         </nav>
     </header>
-    <section id="home" aria-label="seção curriculo download Anderson" class="section-div"> 
-        <div>
-            <h1>Anderson Amaral</h1>
-            <h2 class="digitando">Developer Back End</h2>
-            <p>1x Oracle Certified</p>
-            <a href="curriculoAnderson.pdf" download>Download CV</a>
+    
+    <section id="home" aria-label="seção curriculo download Anderson" class="home"> 
+        <div class="home-div">
+            <div class="home-text">
+                <div class="slide">
+                    <span class="one">Hello</span>
+                    <span class="two">I'm</span>
+                </div>
+                    <h1>Anderson Amaral</h1>
+                    <h3 class="digitando">BackEnd Developer</h3>
+                    <p><i class= "fa-solid fa-cloud" style='color:#585858; font-size: 1.2rem; margin-right: 5px;'></i><a class="link"
+                        href="https://www.credly.com/badges/db773eb9-df4c-41f1-a42a-b5b2cd08742e/linked_in?t=s8c4oo"
+                        target="_blank">1x Oracle Certified</a></p>
+                <div class="button">
+                    <a href="assets/pdf/andersonjrCV.pdf" class="btn" download>Download CV</a>
+                    <a href="#projects" class="btn2"><span><i class="bx bx-play"></i></span>See my work</a>
+                </div>
+                <div class="socials">
+                    <a href="https://www.linkedin.com/in/andersonnmoreira/" target="_blank" class="btn-socials"><span><i class="bx bxl-linkedin"></i></span></a>
+                    <a href="https://github.com/gtiAnderson" target="_blank" class="btn-socials"><span><i class="bx bxl-github"></i></a>
+                    <a href="https://www.instagram.com/andersonn.dev/" target="_blank" class="btn-socials"><span><i class="bx bxl-instagram"></i></i></a>
+                    <a href="https://www.youtube.com/@andersondevprog" target="_blank" class="btn-socials"><span><i class="bx bxl-youtube"></i></i></a>
+                    </div>
+            </div>
         </div>
-        
+    </div>
     </section>
     <main id="about">
         <article aria-label="seção sobre mim" class="sobre">
@@ -65,50 +84,25 @@
             </div>   
         </article>
     </main>
-    <section id="services" class="services">
-        <div class="sobre_titulo">        
-            <h1>Services</h1>
-            <p> Professional - Resume</p>
-            <div aria-label="seção apenas de ilustrações de botões">
-                 <span></span>
-                 <span></span>
-                 <span></span>
+    <section class="experience" id="experience">
+        <div class="main-text">
+            <h2><span>Work</span> Experiences</h2>
+            <p>Professional Experience</p>
+        </div>
+        
+        <div class="timeline">
+
+            <div class="container">
+                <img src="assets/img/iconCompasso-uol.png">
+                <div class="text-box">
+                    <small>04/2025 - <span>now</span></small>
+                    <h5>BackEnd Developer - <span><b>Compass UOL</b></span></h5>
+                    <p><span>Stack:</span> Java, Spring Boot, Spring Cloud, MySQL, DynamoDB, RDS, ECS, EC2, Docker, SQS,
+                        Kafka</p>
+                </div>
             </div>
         </div>
-        <div class="my_services">
-            <ul aria-label="Navegação secundaria">
-                <li>
-                    <i class="fa-solid fa-laptop-file"></i>
-                    <h3>Web Development</h3>
-                    <p>I create responsive websites and web applications using HTML, CSS, JavaScript, and integrate them with databases like MySQL and MongoDB. My focus is on building interactive and dynamic user interfaces.</p>
-                </li>
-                <li>
-                    <i class="fa-solid fa-laptop-file"></i>
-                    <h3>Back-End Development in Java</h3>
-                    <p>I develop robust back-end systems using Java and frameworks like Spring Boot, ensuring efficient communication with databases and creating secure and scalable applications.</p>
-                </li>
-                <li>
-                    <i class="fa-solid fa-laptop-file"></i>
-                    <h3>Database Projects</h3>
-                    <p>I specialize in designing and implementing database solutions, including data modeling, creating tables, stored procedures, and writing efficient queries in both SQL and NoSQL databases.</p>
-                </li>
-                <li>
-                    <i class="fa-solid fa-laptop-file"></i>
-                    <h3>Modeling Systems</h3>
-                    <p>I create system models using UML diagrams, such as use case diagrams, class diagrams, and sequence diagrams, to visualize and plan the structure and functionality of a system before implementation.</p>
-                </li>
-                <li>
-                    <i class="fa-solid fa-laptop-file"></i>
-                    <h3>Use Case Development and Workflow Diagrams</h3>
-                    <p>I document workflows and use cases to clearly represent how users interact with applications, helping both technical and non-technical stakeholders understand the system's behavior.</p>
-                </li>
-                <li>
-                    <i class="fa-solid fa-laptop-file"></i>
-                    <h3>Development of RESTful APIs</h3>
-                    <p>I design and develop RESTful APIs, focusing on performance, security, and scalability. These APIs are used to enable communication between different software components and systems.</p>
-                </li>
-            </ul>
-        </div>
+        
     </section>
     <section id="education" class="my_resume">
         <div class="sobre_titulo">
@@ -181,8 +175,9 @@
             </div>
         </div>
     </section>
-    <section id="projects">
+    <section class="projects" id="projects">
         <h2 class="projects-title">Latest <span class="highlight">Projects</span></h2>
+        <p>Portfolio</p>
         <div class="projects-container">
             
             <!-- Projeto 1 -->
@@ -219,48 +214,94 @@
             </div>
         </div>
     </section>
-    <section id="skills">
-        <h2>My <span>Skills</span></h2>
+
+    <section class="skills" id="skills">
+        <div class="main-text">
+            <h2>My <span>Skills</span></h2>
+            <p>Technical Skills</p>
+        </div>
+        
         <div class="skills-container">
+
+            <!-- Programming Languages -->
+
             <div class="skill-card">
-                <img src="assets/img/iconJava.png" alt="Java">
-                <p>Java</p>
+                <div class="s-icons">
+                    <i class="bx bxl-java"></i>
+                </div>
+                <h3>Java</h3>
             </div>
             <div class="skill-card">
-                <img src="assets/img/iconSpring.png" alt="Spring Boot">
-                <p>Spring Boot</p>
+                <div class="s-icons">
+                    <i class="bx bxl-javascript"></i>
+                </div>
+                <h3>JavaScript</h3>
             </div>
             <div class="skill-card">
-                <img src="assets/img/iconMicroservices.png" alt="Microservices">
-                <p>Microservices</p>
+                <div class="s-icons">
+                    <i class="bx bxl-typescript"></i>
+                </div>
+                <h3>TypeScript</h3>
             </div>
             <div class="skill-card">
-                <img src="assets/img/iconMySQL.png" alt="MySQL">
-                <p>MySQL</p>
+                <div class="s-icons">
+                    <i class="bx bxl-nodejs"></i>
+                </div>
+                <h3>Node.js</h3>
+            </div>
+        
+            <!-- Databases -->
+
+            <div class="skill-card">
+                <div class="s-icons">
+                    <i class="bx bx-data"></i>
+                </div>
+                <h3>MySQL</h3>
             </div>
             <div class="skill-card">
-                <img src="assets/img/iconMongo.png" alt="MongoDB">
-                <p>MongoDB</p>
+                <div class="s-icons">
+                    <i class="bx bxl-mongodb"></i>
+                </div>
+                <h3>MongoDB</h3>
             </div>
             <div class="skill-card">
-                <img src="assets/img/iconDocker.png" alt="Docker">
-                <p>Docker</p>
+                <div class="s-icons">
+                    <i class="bx bxl-mongodb"></i>
+                </div>
+                <h3>Mongoose</h3>
+            </div>
+        
+            <!-- Frameworks -->
+
+            <div class="skill-card">
+                <div class="s-icons">
+                    <i class="bx bxl-spring-boot"></i>
+                </div>
+                <h3>Spring Boot</h3>
             </div>
             <div class="skill-card">
-                <img src="assets/img/iconPostman.png" alt="Postman">
-                <p>Postman</p>
+                <div class="s-icons">
+                    <i class="bx bx-server"></i>
+                </div>
+                <h3>Express</h3>
             </div>
             <div class="skill-card">
-                <img src="assets/img/iconGit.png" alt="Git">
-                <p>Git</p>
+                <div class="s-icons">
+                    <i class="bx bxl-docker"></i>
+                </div>
+                <h3>Docker</h3>
             </div>
             <div class="skill-card">
-                <img src="assets/img/iconScrum.png" alt="Agile Methodologies">
-                <p>Agile Methodologies</p>
+                <div class="s-icons">
+                    <i class="bx bxl-aws"></i>
+                </div>
+                <h3>Amazon Web Services</h3>
             </div>
             <div class="skill-card">
-                <img src="assets/img/iconSpring.png" alt="Spring Security">
-                <p>Spring Security</p>
+                <div class="s-icons">
+                    <i class="bx bx-cloud-upload"></i>
+                </div>
+                <h3>Cloud Computing</h3>
             </div>
         </div>
     </section>
