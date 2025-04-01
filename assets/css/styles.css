@@ -34,41 +34,46 @@ body::-webkit-scrollbar-thumb {
 }
 
 body {
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-    background-image: url('../img/img-BrancoPortfolio2.png'); /* Caminho da sua imagem */
-    background-repeat: no-repeat; /* Não repetir a imagem */
-    background-size: cover; /* Faz a imagem cobrir toda a tela */
-    background-position: center; /* Centraliza a imagem */
-    background-attachment: fixed; /* Faz a imagem ficar fixa enquanto rola a página */
+    background: var(--bg-color);
+    color: var(--text-color);
 }
 
 /* HEADER */
 
 header {
-    padding: 10px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Ajusta para o Amaral e a navegação ficarem na mesma linha */
-    position: fixed; /* Fixa o header (Amaral + Navegação) no topo da página */
+    justify-content: space-between; /* Garante que os itens fiquem nos cantos */
+    position: fixed; /* Fixa o header no topo */
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(238, 238, 238, 0.8); /* Fundo transparente com leve opacidade */
-    z-index: 1000; /* Garante que o header fique por cima de outros elementos */
-    box-shadow: 0 4px 6px rgba(250, 250, 250, 0.1); /* Adiciona sombra para dar destaque */
+    padding: 10px 20px; /* Ajusta o espaçamento interno */
+    z-index: 1000; /* Garante que o header fique acima de outros elementos */
+    background: rgba(240, 240, 240, 0.9); /* Cinza claro com leve opacidade */
+    border-bottom: rgba(200, 200, 200, 0.8); /* Borda inferior cinza */
+    transition: all .45s ease; /* Transição suave */
 }
 
 header h1 {
-    color: #c96522; /*A*/
+    color: var(--main-color); /*A*/
     font-size: 2.4rem;
+    margin: 0;
 }
 
 header span {
-    color: #03235e; /*maral*/
+    color: var(--text-color); /*maral*/
 }
 
+header i.fa-bars {
+    display: block; /* Exibe o ícone */
+    color: var(--text-color); /* Cor do ícone */
+    font-size: 30px; /* Tamanho do ícone */
+    z-index: 10001; /* Garante que o ícone fique acima de outros elementos */
+    cursor: pointer; /* Indica que é clicável */
+    position: relative; /* Permite ajustes de posição */
+    margin: 0; /* Remove margens extras */
+}
 
 header .navegacao-primaria {
     display: flex;
@@ -77,7 +82,7 @@ header .navegacao-primaria {
 }
 
 header .navegacao-primaria li a {
-    color: #000000; /*seções*/
+    color: var(--second-color); /*seções*/
     width: 0px;
     height: 0px;
     font-size: 1.1rem; /*Tamanho da seção*/
@@ -109,6 +114,8 @@ section{
     position: relative;
     height: 100vh;
     width: 100%;
+    background-image: url( '../img/img-BrancoPortfolio2.png');
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -295,6 +302,8 @@ section{
 
 main {
     background: var(--bg-color);
+    padding: 50px 10; /* Reduz o espaçamento superior e inferior */
+    margin: 0;
 }
 
 main .sobre {
@@ -432,21 +441,28 @@ main .sobre {
 
 /*RESPONSIVO*/
 
-/* Responsividade para telas menores que 992px (mobile) */
-@media(max-width: 992px) {
-    .section-div img {
-        display: none; /* Ocultar a imagem na seção em telas pequenas */
+/* Layout desktop (telas maiores que 992px) */
+
+@media(min-width: 993px) {
+    header .navegacao-primaria {
+        display: flex;
     }
 
+    header i.fa-bars {
+        display: none;
+    }
+}
+
+/* Responsividade para telas menores que 992px (mobile) */
+@media(max-width: 992px) {
     .section-div {
-        background-image: url('../img/img-BrancoPortfolio2.png'); /* Foto home celular */
+        background-image: url('../img/img-BrancoPortfolio2.png');
         background-repeat: no-repeat;
         background-size: cover;
     }
-
+    
     header {
-        justify-content: space-between;
-        padding: 30px 70px;
+            padding: 10px 15px; /* Ajusta o espaçamento interno para telas menores */
     }
 
     /* Ocultar o menu de navegação em telas pequenas por padrão */
@@ -456,28 +472,92 @@ main .sobre {
 
     /* Exibir o ícone de menu (fa-bars) em telas menores */
     header i.fa-bars {
-        display: block; /* Exibe o ícone */
-        color: var(--text-color); /* Cor do ícone */
-        font-size: 35px; /* Tamanho do ícone */
-        z-index: 10001;
-        cursor: pointer;
-        margin-left: 25px; /* Indica que é clicável */
+        position: absolute; /* Fixa o ícone no canto direito */
+        top: 25px; /* Ajusta a posição vertical */
+        right: 15px; /* Ajusta a posição horizontal */
     }
+
 
     /* Menu de navegação no mobile (quando ativado) */
     header .navegacao-primaria.ativado {
-        background: linear-gradient(rgba(43,42,42, 0.176), rgba(46,46,46, 0.724));
+        background: linear-gradient(rgba(200, 200, 200, 1), rgba(200, 200, 200, 1));
         position: absolute;
         display: grid; /* Exibe os itens em grid */
         top: 80px; /* Posição abaixo do header */
-        color: #ececec; /* Cor do texto */
         z-index: 10; /* Garante que fique acima de outros elementos */
         padding: 30px;
-        font-size: 1.6rem;
-        font-weight: bold;
+        font-size: 1.1rem;
         border-radius: 0 0 4px 4px; /* Bordas arredondadas */
         right: 20px; /* Alinhado à direita */
-        animation: sobeSecao 0.8s ease-in-out forwards; /* Animação suave */
+        animation: sobeSecao 0.4s ease-in-out forwards; /* Animação suave */
+    }
+
+    .home{
+        position: relative;
+        height: 87vh;
+        width: 100%;
+        background-image: url(../img/img-BrancoPortfolio2.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    :root{
+        --big-font: 3rem;
+        --h2-font: 2rem;
+        --p-font: 0.9rem;
+        transition: .1s;
+    }
+
+    .home-text h3{
+        font-size: 1.6rem;
+    }
+
+    .home{
+        height: 87vh;
+    }
+
+    .about-text h4{
+        font-size: var(--p-small-font)
+    }
+
+    .btn{
+        font-size: 0.7rem;
+    }
+
+    .socials{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        margin: 1px;
+    }
+
+    .text-box{
+        width: 100%;
+    }
+
+    .home-text p{
+        color: var(--second-color);
+        font-size: var(--p-font);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .link{
+        color: var(--text-color);
+        transition: .5s;
+    }
+    
+    .link:hover{
+        transition: .5s;
+        color: #e4ab32;
     }
 
     /* Ajustes de layout para as imagens na seção "sobre" */
@@ -491,23 +571,14 @@ main .sobre {
     }
 }
 
-/* Layout desktop (telas maiores que 992px) */
-@media(min-width: 993px) {
-    header .navegacao-primaria {
-        display: flex; /* Exibe o menu de navegação no layout desktop */
-    }
-
-    /* Ocultar ícone de menu em telas grandes */
-    header i.fa-bars {
-        display: none;
-    }
-}
 
 
 /*SEÇÃO EXPERIENCES*/
 
 .experience{
     background-color: var(--second-bg-color);
+    padding: 50px 10; /* Reduz o espaçamento superior e inferior */
+    margin: 0;
 }
 
 .main-text{
@@ -516,11 +587,13 @@ main .sobre {
 
 .main-text p{
     color: var(--second-color);
-    font-size: 15px;
-    margin-bottom: 15px;
+    font-size: var(--p-font);
+    margin-bottom: 20px;
 }
 
 .main-text h2{
+    text-align: center;
+    margin-bottom: 10px; /* Reduz o espaçamento inferior */
     font-size: var(--h2-font);
     line-height: 1;
     color: var(--text-color)
@@ -605,9 +678,11 @@ main .sobre {
 
 
 .my_resume {
-    color: #03235e;
+    color: var(--text-color);
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-color);
+    padding: 80px 10; /* Reduz o espaçamento superior e inferior */
+    margin: 0;
 }
 
 .resume_gerenica {
@@ -622,7 +697,7 @@ main .sobre {
 .resume_gerenica h2 {
     font-family: 'Poppins';
     font-size: 1.3rem;
-    background-color: #ececec; /*1º quadrado*/
+    background-color: var(--bg-color); /*1º quadrado*/
     justify-self: start;
     padding: 10px;
     border-radius: 20px;
@@ -632,7 +707,7 @@ main .sobre {
     margin-right: 10px;
 }
 
-.experience {
+.cursos {
     margin-bottom: 30px;
     grid-column: 1;
     grid-row: 1;
@@ -655,7 +730,7 @@ main .sobre {
 
 
 .resume_gerenica .experience_content div {
-    background-color: #ececec; /*cor das caixinhas*/
+    background: #f5f5f5; /*cor das caixinhas*/
     animation: ladoSecao .7s ease-in-out forwards;
     display: none;
     padding: 40px;
@@ -670,7 +745,7 @@ main .sobre {
 .resume_gerenica .experience_content div::before {
     content: '';
     border-right: 30px solid transparent;
-    border-bottom: 30px solid #ececec;
+    border-bottom: 30px solid #f5f5f5;;
     position: absolute;
     top: -20px;
     left: 30px;
@@ -678,7 +753,7 @@ main .sobre {
 }
 
 .resume_gerenica .experience_content div span {
-    color: #03235e;/*data*/
+    color: var(--text-color);/*data*/
     font-family: "Poppins";
     font-weight: bold;
 }
@@ -702,7 +777,7 @@ main .sobre {
 
 
 .resume_gerenica .education_content div {
-    background-color: #ececec;
+    background-color: #f5f5f5;
     display: none;
     animation: ladoSecao .7s ease-in-out forwards;
     padding: 40px;
@@ -721,7 +796,7 @@ main .sobre {
 .resume_gerenica .education_content div::before {
     content: '';
     border-right: 30px solid transparent;
-    border-bottom: 30px solid #ececec;
+    border-bottom: 30px solid #f5f5f5;;
     position: absolute;
     top: -20px;
     left: 30px;
@@ -753,23 +828,12 @@ main .sobre {
 }
 
 /*PROJECTS*/
-#projects {
+
+.projects {
     text-align: center;
-    padding: 50px;
-}
-
-.projects{
-    background: var(--bg-color);
-}
-
-.projects-title {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2rem;
-    color: #03235e;
-}
-
-.highlight {
-    color: #c96522;
+    background: var(--second-bg-color);
+    padding: 80px 10; /* Reduz o espaçamento superior e inferior */
+    margin: 0;
 }
 
 .projects-container {
@@ -864,22 +928,15 @@ main .sobre {
 /*HABILIDADES*/
 
 .skills{
-    background: var(--second-bg-color);
-}
-
-.main-text{
-    text-align: center;
+    background: var(--bg-color);
+    padding: 80px 10; /* Reduz o espaçamento superior e inferior */
+    margin: 0;
 }
 
 .main-text p{
     color: var(--second-color);
     font-size: 15px;
     margin-bottom: 15px;
-}
-
-.main-text h2{
-    font-size: var(--h2-font);
-    line-height: 1;
 }
 
 .skills-container{
@@ -899,7 +956,7 @@ main .sobre {
     max-height: 300px;
     min-height: 200px;
     text-align: center;
-    background: var(--bg-color);
+    background: #f5f5f5;
     padding: 35px 45px;
     border-radius: 8px;
     transition: all .45s ease;
