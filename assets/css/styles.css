@@ -158,7 +158,7 @@ section{
 .home-text h3 {
     color: var(--main-color);
     margin: 0 0 35px;
-    font-size: var(--h2-font);
+    font-size: var(--h2-font); 
     font-weight: 700;
     line-height: 1.3;
 }
@@ -449,7 +449,7 @@ main .sobre {
     }
     
     header {
-            padding: 10px 15px; /* Ajusta o espaçamento interno para telas menores */
+        padding: 10px 15px; /* Ajusta o espaçamento interno para telas menores */
     }
 
     /* Ocultar o menu de navegação em telas pequenas por padrão */
